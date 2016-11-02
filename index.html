@@ -47,70 +47,141 @@
 
 				    <div class="nav navbar-nav navbar-right">
         				<ul class="nav navbar-nav navbar-right">
-        					<li class="authorization"><button  type="button" class="btn  btn-lg authorization" data-toggle="modal" data-target="#createNewUser"><span class="glyphicon glyphicon-user"></span> Створити профіль</button></li>	
-        					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Увійти</a></li> 
+        					<li><a data-toggle="modal" data-target="#createNewUser"><span class="glyphicon glyphicon-user"></span> Створити профіль</a></li>	
+        					<li><a data-toggle="modal" data-target="#AuthorizedUser"><span class="glyphicon glyphicon-log-in"></span> Увійти</a></li> 
         				</ul> 	
 
-        				<!-- Modal -->
-						<div class="modal fade" id="createNewUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						  <div class="modal-dialog" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-						      </div>
-						      <div class="modal-body">
-						        ...
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn btn-primary">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
+        				<!-- Modal new user -->
+						<form class="modal fade" id="createNewUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+							    <div class="modal-content">
+								    <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <center>
+								        	<h4 class="modal-title" id="myModalLabel">Новий користувач</h4>
+								        </center>
+								    </div>
+
+								    <div class="modal-body">
+								    	<center>
+									        <div class="formBlocks">
+												<input id="name" type="text" name="username" placeholder="Ваше ім'я" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
+												<div id="errorName" class="errorMessage text-danger"></div> 
+											</div>
+
+											<div class="formBlocks">
+												<input id="surname" type="text" name="usersurname" placeholder="Ваше прізвище" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
+												<div id="errorSurname" class="errorMessage text-danger"></div>
+											</div>
+
+											<div class="formBlocks">
+												<input id="pasword" type="pasword" name="userpasword" placeholder="Ваш пароль" required>
+												<div id="errorPasword" class="errorMessage text-danger"></div>
+											</div>											
+
+											<div class="formBlocks">
+												<span class="titles">Ваша електронна адреса:</span></br><input id="email" type="email" name="useremail" placeholder="Ваша електронна адреса" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+												<div id="errorEmail" class="errorMessage text-danger" ></div>
+											</div>
+
+											<div class="formBlocks">
+												<span class="titles">Ваш номер телефону:</span>
+												</br>
+												<input id="phone" type="phone" name="userphone" placeholder="+38 (067) 676 76 76" data-pattern="\+38 \(\d{3}\) \d{3} \d{2} \d{2}" required>
+												<div id="errorPhone" class="errorMessage text-danger" ></div>
+											</div>
+
+											<div class="formBlocks">
+												<span class="titles">Вашa стать:</span>
+												</br>
+												<input id="woman" type="radio" name="usersex" value="female" checked><span class="titles ">Жінка </span></input>
+												<input id="man" type="radio" name="usersex" value="male" class="" ><span class="titles ">Чоловік</span></input> 
+											</div>
+										</center>	
+									</div>
+
+									<div class="modal-footer">	    
+										<center>
+									    	<button type="button" class="btn btn-primary btn btn-block" style="width: 70%" onclick="alert('You save changes!')">Зареєструватися</button>
+									    </center>
+									</div>
+							    </div>
+							</div>
+						</form>
+
+						<!-- Modal authorized user -->
+						<form class="modal fade" id="AuthorizedUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+							    <div class="modal-content">
+								    <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <center>
+								        	<h4 class="modal-title" id="myModalLabel">Авторизований користувач</h4>
+								        </center>
+								    </div>
+
+
+									<div class="modal-body">
+										<div class="formBlocks">
+											Ваше ім'я: <br><input id="AuthorizedUsername" type="text" name="AuthorizedUserusername" placeholder="Введіть Ваше ім'я" maxlength="30" data-pattern="[A-Za-zА-Яа-я]"required>
+											<div id="errorNameAuthorizedUser" class="errorMessage text-danger"></div>
+										</div>
+
+										<div class="formBlocks">
+											Ваш пароль: <br><input id="AuthorizedUserpasword" type="pasword" name="AuthorizedUserpasword" placeholder="Ваш пароль"  required>
+											<div id="errorPaswordAuthorizedUser" class="errorMessage text-danger"></div>
+										</div>	 
+
+										<div class="formBlocks">
+											<input type="button" value="Подати" onclick="submitInformation('AuthorizedUser')">
+											<input type="reset" value="Ввести знову">
+										</div>
+									</div>
+
+									<div class="modal-footer">	    
+									    <button type="button" class="btn btn-primary" onclick="alert('You save changes!')">Увійти</button>
+									</div>
+								</div>
+
+						</form>
 				    </div>
 			    </div>
 		  	</div>
 		</nav>
 
 		<div id="section1" class="container-fluid">
-		  <h1>Section 1</h1>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+			<center>
+				<h3>Section 1</h3>
+				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+			</center>
 		</div>
 		<div id="section2" class="container-fluid">
-		  <h1>Section 2</h1>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+		 	<center>
+				<h3>Section 2</h3>
+				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+		 		 <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+		 		 <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p></center>
 		</div>
 		<div id="section3" class="container-fluid">
-		  <h1>Section 3</h1>
+		  <h3>Section 3</h3>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		</div>
 		<div id="section41" class="container-fluid">
-		  <h1>Section 4 Submenu 1</h1>
+		  <h3>Section 4 Submenu 1</h3>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		</div>
 		<div id="section42" class="container-fluid">
-		  <h1>Section 4 Submenu 2</h1>
+		  <h3>Section 4 Submenu 2</h3>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 		</div>
-
 	    
 	    <!-- Підключення мінімізованої збірки всіх плагінів jQuery.-->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	    

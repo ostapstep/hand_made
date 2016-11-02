@@ -9,7 +9,7 @@ body {
 	float: left;
 }
 
-#myNavbar, {
+#myNavbar {
 	float: left;
 }
 
@@ -39,4 +39,16 @@ body {
 
 .authorization  :hover{
 	color:white!important;	/* колір при наведенні на об'єкт*/	
+}
+
+.formBlocks{
+	padding: 10px;
+}
+
+.radioInput{
+	margin-left: 10px!important;	
+}
+
+input{
+	margin-top: 5px; 
 }
