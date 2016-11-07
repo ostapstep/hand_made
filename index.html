@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html xml:lang="uk" lang="uk">
 	<head>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Keywords" content="робота в києві, робота, робота в україні, вакансії, резюме, пошук роботи, шукаю роботу, роботодавці, підбір персоналу, work ua, ворк юа">		<!--Основні запити через інтернет-->
         <meta name="description" content="hand_made_website ...">		<!--короткий опис сторінки-->
         <link type="text/css" rel="stylesheet" href="css/normalize.css"/>		<!--Забезпечення правильної візуалізації та підтримки масштабованості-->
 
@@ -64,45 +65,45 @@
 
 								    <div class="modal-body">
 								    	<center>
-									        <div class="formBlocks">
-												<input id="name" type="text" name="username" placeholder="Ваше ім'я" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
+									        <div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="name" type="text" name="username" placeholder="Ваше ім'я" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
 												<div id="errorName" class="errorMessage text-danger"></div> 
 											</div>
 
-											<div class="formBlocks">
-												<input id="surname" type="text" name="usersurname" placeholder="Ваше прізвище" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
+											<div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="surname" type="text" name="usersurname" placeholder="Ваше прізвище" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
 												<div id="errorSurname" class="errorMessage text-danger"></div>
 											</div>
 
-											<div class="formBlocks">
-												<input id="pasword" type="pasword" name="userpasword" placeholder="Ваш пароль" required>
+											<div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="pasword" type="pasword" name="userpasword" placeholder="Ваш пароль" required>
 												<div id="errorPasword" class="errorMessage text-danger"></div>
 											</div>											
 
-											<div class="formBlocks">
-												<span class="titles">Ваша електронна адреса:</span></br><input id="email" type="email" name="useremail" placeholder="Ваша електронна адреса" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+											<div class="formBlocks has-feedback">
+												<span class="titles">Ваша електронна адреса:</span></br><input class="cheekingInformation form-control" id="email" type="email" name="useremail" placeholder="Ваша ел. пошта" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>	
 												<div id="errorEmail" class="errorMessage text-danger" ></div>
 											</div>
 
-											<div class="formBlocks">
+											<div class="formBlocks has-feedback">
 												<span class="titles">Ваш номер телефону:</span>
 												</br>
-												<input id="phone" type="phone" name="userphone" placeholder="+38 (067) 676 76 76" data-pattern="\+38 \(\d{3}\) \d{3} \d{2} \d{2}" required>
+												<input class="cheekingInformation form-control" id="phone" type="phone" name="userphone" placeholder="+38 (067) 676 76 76" data-pattern="\+38 \(\d{3}\) \d{3} \d{2} \d{2}" required>
 												<div id="errorPhone" class="errorMessage text-danger" ></div>
 											</div>
 
-											<div class="formBlocks">
+											<div class="formBlocks has-feedback">
 												<span class="titles">Вашa стать:</span>
 												</br>
-												<input id="woman" type="radio" name="usersex" value="female" checked><span class="titles ">Жінка </span></input>
-												<input id="man" type="radio" name="usersex" value="male" class="" ><span class="titles ">Чоловік</span></input> 
+												<input  id="woman" type="radio" name="usersex" value="female" checked><span class="titles ">Жінка </span></input>	
+												<input id="man" type="radio" name="usersex" value="male" class="" ><span class="titles "> Чоловік</span></input> 
 											</div>
 										</center>	
 									</div>
 
 									<div class="modal-footer">	    
 										<center>
-									    	<button type="button" class="btn btn-primary btn btn-block" style="width: 70%" onclick="alert('You save changes!')">Зареєструватися</button>
+									    	<button type="button" class="btn btn-primary btn btn-block" style="width: 70%" onclick="checkMyForm('createNewUser')">Зареєструватися</button>
 									    </center>
 									</div>
 							    </div>
@@ -122,28 +123,27 @@
 
 
 									<div class="modal-body">
-										<div class="formBlocks">
-											Ваше ім'я: <br><input id="AuthorizedUsername" type="text" name="AuthorizedUserusername" placeholder="Введіть Ваше ім'я" maxlength="30" data-pattern="[A-Za-zА-Яа-я]"required>
-											<div id="errorNameAuthorizedUser" class="errorMessage text-danger"></div>
-										</div>
+										<center>
+											<div class="formBlocks has-feedback">
+												Ваша електронна адреса: <br><input class="cheekingInformation form-control" id="AuthorizedUsereMail"  type="email" name="AuthorizedUserusername" placeholder="Введіть Вашy ел. пошту" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+												<div id="errorAuthorizedUserMail" class="errorMessage text-danger"></div>
+											</div>
 
-										<div class="formBlocks">
-											Ваш пароль: <br><input id="AuthorizedUserpasword" type="pasword" name="AuthorizedUserpasword" placeholder="Ваш пароль"  required>
-											<div id="errorPaswordAuthorizedUser" class="errorMessage text-danger"></div>
-										</div>	 
-
-										<div class="formBlocks">
-											<input type="button" value="Подати" onclick="submitInformation('AuthorizedUser')">
-											<input type="reset" value="Ввести знову">
-										</div>
+											<div class="formBlocks has-feedback">
+												Ваш пароль: <br><input class="cheekingInformation form-control" id="AuthorizedUserpasword" type="pasword" name="AuthorizedUserpasword" placeholder="Ваш пароль"  required>
+												<div id="errorPaswordAuthorizedUser" class="errorMessage text-danger"></div>
+											</div>		
+										</center>								
 									</div>
 
 									<div class="modal-footer">	    
-									    <button type="button" class="btn btn-primary" onclick="alert('You save changes!')">Увійти</button>
+									    <button type="button" class="btn btn-primary" onclick="checkMyForm('AuthorizedUser')">Увійти</button>
 									</div>
 								</div>
 
 						</form>
+
+
 				    </div>
 			    </div>
 		  	</div>
@@ -154,7 +154,7 @@
 				<h3>Section 1</h3>
 				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+				  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p><p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>				  
 			</center>
 		</div>
 		<div id="section2" class="container-fluid">
